@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @user = User.all
+  end
+
   def create
     @user = User.new(book_params)
     @user.user_id = current_user.id
@@ -7,8 +11,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @books = @user.books.page(params[:page]).reverse_order
   end
 
   def edit
