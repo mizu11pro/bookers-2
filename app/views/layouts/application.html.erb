@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
     <h1>Bookers</h1>
     <li>
-      <%= link_to "Home",  user_path %>
+      <%= link_to "Home",  user_path(current_user) %>
     </li>
     <li>
       <%= link_to "Users", users_path %>

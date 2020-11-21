@@ -16,3 +16,10 @@
 <h1>Books</h1>
 <h2>Title</h2>
 <h2>Opinion</h2>
+<% @books.each do |book| %>
+<%= link_to user_path(@user) do %>
+<%= attachment_image_tag @user, :profile_image, :fill, 40, 48, format: 'jpeg', fallback: "no_image.jpg" %>
+ <% end %>
+ <%= book.title %>
+<%= book.body %>
+<% end %>

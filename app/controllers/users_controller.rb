@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def create
@@ -11,9 +11,16 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def edit
     @user = User.find(params[:id])
+  end
+
+  private
+
+  def book_params
+  paarams.require(:user).permit(:user_id)
   end
 end
