@@ -1,5 +1,8 @@
-<%= render 'users/list', user: @user %>
+<%= flash[:notice] %>
+
+<%= render 'books/list', book: @book, user: @user %>
 
 <h1>Books</h1>
 <h2>Title</h2>
 <h2>Opinion</h2>
+

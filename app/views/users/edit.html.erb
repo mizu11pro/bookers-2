@@ -6,5 +6,6 @@
 <label for="inputImage">Image</label>
 <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
 <label for="inputIntroduction">Introduction</label>
+<%= f.text_area :introduction, autofocus: true, placeholder:"" %>
 <%= f.submit "Update user" %>
 <% end %>
