@@ -1,9 +1,8 @@
+
 <h1>User info</h1>
- <%= image_tag('no_image.jpg') %>
+ <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
 <h2>name <%= user.name %></h2>
-
  <h2>Introduction<%= user.introduction %></h2>
-
 
  <p><%= link_to "設定", edit_user_path(current_user) %></p>
 
