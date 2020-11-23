@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @book = Book.new
     @users = User.all
   end
 
@@ -10,9 +11,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @book = Book.new
     @user = User.find(params[:id])
-    #@post_images = @user.post_images.page(params[:page]),reverse_order
+    @book = Book.new
+    @books = @user.books #ユーザの持っているbookを代入
   end
 
   def edit
@@ -24,6 +25,8 @@ class UsersController < ApplicationController
     flash[:notice] = "You have updated user successfully."
     if @user.update(user_params)
       redirect_to users_path
+    else
+      render "edit"
     end
   end
 

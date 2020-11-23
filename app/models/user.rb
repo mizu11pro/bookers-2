@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy
   attachment :profile_image
+
+  validates :name, presence: { message: "Name is too short (minimum is 2 characters)"
+  }
 end
