@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user! #各ユーザのURLを検索しても開けないようにしている
+
   def index
     @book = Book.new
     @users = User.all
