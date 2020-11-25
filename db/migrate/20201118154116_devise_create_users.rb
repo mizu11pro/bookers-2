@@ -2,6 +2,8 @@
 
 class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
+    add_column :users, :name, :string
+    add_index :users, :name, unique: true
     create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
