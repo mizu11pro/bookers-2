@@ -2,12 +2,27 @@
 
 <%= render 'books/list', book: @book, user: current_user %>
 
-<h1>Users</h1>
-<h2>image</h2>
-<h2>name</h2>
+<div class="col-md-8 offset-md-1">
+<h2>Users</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>image</th>
+                <th>name</th>
+                <th col-span="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |f| %>
+            <tr>
+                <td>
+                  <%= attachment_image_tag f, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
+                </td>
+                <td><%= f.name %></td>
+                <td><%= link_to "Show", user_path(f.id) %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
 
-<% @users.each do |f| %>
-<%= attachment_image_tag f, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
-<%= f.name %>
-<%= link_to "Show", user_path(f.id) %>
-<% end %>

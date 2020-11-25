@@ -34,18 +34,17 @@
               <%= link_to "logout", destroy_user_session_path, method: :delete, class:"fas fa-sign-out-alt nav-link text-light" %>
             </li>
             <% else %>
-            <h1>Bookers</h1>
             <li>
-              <%= link_to "Home", root_path %>
+              <%= link_to "Home", root_path, class:"fas fa-home nav-link text-light" %>
             </li>
             <li>
-              <%= link_to "about", home_about_path %>
+              <%= link_to "about", home_about_path, class:"fas fa-link nav-link text-light" %>
             </li>
             <li>
-              <%= link_to "sign up", new_user_registration_path %>
+              <%= link_to "sign up", new_user_registration_path, class:"fas fa-user-plus nav-link text-light" %>
             </li>
             <li>
-              <%= link_to "login", new_user_session_path %>
+              <%= link_to "login", new_user_session_path, class:"fas fa-sign-in-alt nav-link text-light" %>
             </li>
             <% end %>
           </ul>
@@ -53,7 +52,24 @@
       </div>
      </nav>
     </header>
-    <%= flash[:notice] %>
-    <%= yield %>
+    <br>
+  <main>
+    <div class="container">
+      <div class="row">
+        <%= flash[:notice] %>
+        <%= yield %>
+      </div>
+    </div>
+  </main>
+
+    <footer>
+     <div class="container mt-5 ">
+      <div class="row">
+       <div class="mx-auto">
+        <p>CopyRight Infratop.inc</p>
+       </div>
+      </div>
+     </div>
+    </footer>
   </body>
 </html>
