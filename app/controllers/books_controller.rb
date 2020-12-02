@@ -27,6 +27,7 @@ class BooksController < ApplicationController
       @newbook = Book.new
       @book = Book.find(params[:id])
       @user = @book.user #ブックを持っているユーザの代入
+      @book_comment = BookComment.new
     end
 
     def edit
